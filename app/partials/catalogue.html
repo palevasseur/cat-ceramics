@@ -1,0 +1,133 @@
+<div class="row-fluid tab-pane active" id="catalogue">
+
+    <div class="span4 well">
+
+        <!--div class="input-group">
+            <input type="text" class="input-block-level" placeholder="Rechercher (Numero de piece)">
+            <span class="input-group-btn">
+                <a class="btn" href="#"><i class="icon-search"></i></a>
+            </span>
+        </div-->
+
+        <!--fieldset>
+            <div class="input-append">
+                <input type="text" class="input-block-level" placeholder="Rechercher (Numero de piece)">
+                <button class="btn" type="button"><i class="icon-search"></i></button>
+            </div>
+        </fieldset-->
+
+        <input type="text" class="input-block-level" placeholder="Rechercher (Numero de piece)" ng-model="txtFilter">
+
+        <div style="padding-top: 1em">
+            <h4>Affichage</h4>
+            <div style="padding-left: 1em;">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="chkNumPiece" ng-init="chkNumPiece=true"> Numéros pièces
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="chkRefPhotos"  ng-init="chkRefPhotos=true"> Références photos
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" ng-model="chkIconPhotos" ng-init="chkIconPhotos=false"> Icones photos
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div style="padding-top: 1em;">
+            <h4>Collections</h4>
+            <div style="padding-left: 1em;">
+
+                <!--div class="btn-group">
+                    <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#">
+                        Collections
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <li><a tabindex="-1" href="#">Desactiver</a></li>
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" href="#">Collection 1</a></li>
+                        <li><a tabindex="-1" href="#">Collection 2</a></li>
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" href="#">Creer une collection</a></li>
+                    </ul>
+                </div-->
+
+                <!--fieldset>
+                    <div class="input-append">
+                        <input type="text">
+                        <div class="btn-group">
+                            <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#">
+                                Collections
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                <li><a tabindex="-1" href="#">Desactiver</a></li>
+                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="#">Collection 1</a></li>
+                                <li><a tabindex="-1" href="#">Collection 2</a></li>
+                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="#">Creer une collection</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </fieldset-->
+
+                <!-- TODO: add Collections -->
+                <!-- for drop down, try http://plnkr.co/edit/cs4FLN?p=preview -->
+                <!--select ng-controller="selectionsCtrl" class="form-control btn-block">
+                    <option>Collections désactivées</option>
+                    <option disabled>------------</option>
+                    <option ng-repeat="selection in selections">{{selection.name}}</option>
+                    <option disabled>------------</option>
+                    <option>Créer une collection</option>
+                </select-->
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> Afficher uniquement la selection
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="span8">
+        <table ng-controller="catalogueCtrl" class="table table-bordered table-striped">
+            <!--caption>caption</caption-->
+            <thead>
+            <tr>
+                <th ng-if="chkNumPiece">Pièce</th>
+                <th ng-if="chkRefPhotos">Photos</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="ceramique in ceramiques|filter:{refPiece:txtFilter}">
+                <td ng-if="chkNumPiece" width='1%'>
+                    <div class="checkbox">
+                        <label><input type="checkbox" ng-model="ceramique.collection" ng-change="selectionChanged(ceramique.refPiece)">{{ceramique.refPiece}}</label>
+                    </div>
+                </td>
+                <td ng-if="chkRefPhotos"><ul>
+                    <li ng-repeat="photo in ceramique.listPhotos">
+                        <!-- TODO: add checkbox for each photo
+                        <!--div class="checkbox">
+                            <label><input type="checkbox">{{photo.nomFichier}}<span ng-if="chkIconPhotos"> [icon-picture]</span></label>
+                        </div-->
+                        <label>{{photo.nomFichier}}<span ng-if="chkIconPhotos"> [icon-picture]</span></label>
+                    </li>
+                </ul></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+

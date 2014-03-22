@@ -1,0 +1,88 @@
+CatCeramiques use cases:
+
+1/ nombre de pieces total / nombre de photos total
+
+2/ liste par numero de piece (triée par "ordre naturel") + liste des photos associées
+   possibilité affichage des pièces sous forme d'icone
+   impression du catalogue (pdf)
+   
+3/ Recherche
+   - par numero de piece (ex: toutes les photos pour N123)
+   - visuellement: affichage des pieces en miniature
+   - les photos sans numero de piece
+
+4/ selection / definition de groupe de pieces/photos
+	- impression de la selection (pdf)
+	- zip des photos selectionnées (photos originales ou bien 
+
+===========================================================================================================
+Page Accueil
+===========================================================================================================
+Accueil | Catalogue
+-----------------------------------------------------------------------------------------------------------
+ Stats:
+ - Nombre total de pieces : xx
+ - Nombre total de photos : xx
+ 
+ - Nombre de photo sans numero pieces : xx [afficher]
+
+===========================================================================================================
+-> [afficher] ouvre la page selection "photo sans numero"
+
+
+===========================================================================================================
+Page Catalogue
+===========================================================================================================
+Accueil | Catalogue | Production                                   Selection : "pour imprimer" (45 photos)
+-----------------------------------------------------------------------------------------------------------
+       Options      << |                                                          | >>           Selections
+                       |                                                          |
+Affiche                |                                                          |Modifier la selection:
+[X] Numero piece       |                                                          | o aucune
+[X] Ref photo          |                                                          | o [pour imprimer][coul1]
+[ ] Icone photo        |                                                          | o [expo sevre   ][coul2]
+                       |                                                          | o [expo photos  ][coul3]
+Filtre                 |                                                          |
+[ ] Numero piece:      |                                                          | o [p sans numero][coul4]
+    [N123            ] |                                                          |
+[ ] Aff uniquement     |                                                          |
+    la selection       |                                                          |
+                       |                                                          |
+                       |                                                          |
+===========================================================================================================
+-> "numero piece" activée => liste des pieces + liste photos pour chaque piece (ref et/ou icones photos)
+-> "numero piece" désactivée / "Ref photo activée" => vue photo de type "flow" (avec ou sans ref photo)
+-> "numero piece" désactivée / "Ref photo désactivée" => liste des references photos
+-> "une selection" activé => fait apparaitre en haut de chaque photo la couleur de la selection ou gris, click dessus ajoute/retire de la selection
+-> drag&drop sur une selection => ajoute dans la selection
+-> "p sans numero" n'est pas modifiable
+
+===========================================================================================================
+Page Production
+===========================================================================================================
+Accueil | Catalogue | Production                                   Selection : "pour imprimer" (45 photos)
+-----------------------------------------------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+                                [Créer un doc pdf]  [Télécharger les photos]
+===========================================================================================================
+
+-----------------------
+Workflow de production:
+
+1/ prise de vue
+Métadonnées:
+- Titre = numero de piece, Ex: N964
+- Légende (LR) ou Objet (Explorer) = Largeur/hauteur/Profondeur en mm, format=LxxHxxPxx, Ex: L210H520P95
+- Autre caractéristique ? => ajout apres LxxHxxPxx avec sep '|'
+
+2/ generation des photos
+Nom des fichiers photos: format "{Titre} - {AAAA}-{MM}-{JJ} {hhmmss} - {Nom Fichier}", Ex: N964 - 2013-08-24 181137 - _MG_3985.jpg
+
+-----------------------
+Sur DiskStation:
+\\DISKSTATION\photo\Catalogue des ceramiques
+http://88.176.37.23/photo/

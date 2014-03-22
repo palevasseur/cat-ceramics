@@ -1,0 +1,3 @@
+1/ launch selenium with cmd [webdriver-manager start]. Note: wait launch ok, take time to init !
+2/ launch test with cmd [protractor protractorConf.js]
+ 

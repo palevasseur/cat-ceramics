@@ -1,0 +1,17 @@
+CatCeramiques project base on https://github.com/angular/angular-seed
+launch CatCeramiques (CatCeramiquesNodeService.js must be launch before)
+1/ cmd admin
+2/ [node scripts/web-server.js]
+
+----------------
+launch protractor
+In test folder
+1/ launch selenium with cmd [webdriver-manager start]. Note: wait launch ok, take time to init !
+2/ launch test with cmd [protractor protractorConf.js]
+
+----------------
+launch protractor with grunt (selenium must be launch before)
+In CatCeramiques folder (where Gruntfile.js is defined with protractor default task)
+[grunt]
+Or with the watch
+[grunt watch]
