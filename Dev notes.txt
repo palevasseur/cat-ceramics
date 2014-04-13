@@ -3,6 +3,8 @@ launch CatCeramiques (CatCeramiquesNodeService.js must be launch before)
 1/ cmd admin
 2/ [node scripts/web-server.js]
 
+launch app : http://192.168.1.14:8000/app/index.html
+
 ----------------
 launch protractor
 In test folder
