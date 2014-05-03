@@ -11,43 +11,26 @@
 </head>
 <body>
   <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <script src="lib/bootstrap/bootstrap.min.js"></script>
 
-  <script src="js/catglobal.js"></script>
+  <script src="js/SelectionPieces.js"></script>
+  <script src="js/config.js"></script>
 
-  <!--ul class="menu">
-    <li><a href="#/accueil">Accueil</a></li>
-    <li><a href="#/catalogue">Catalogue</a></li>
-  </ul-->
   <div class="container-fluid">
       <ul class="nav nav-tabs">
            <li class="active">
               <a href="#catalogue" data-toggle="tab">Catalogue</a>
           </li>
-          <li>
+          <!--li>
               <a href="#publier" data-toggle="tab">Publier</a>
-
-          </li>
+          </li-->
           <li>
               <a href="#info" data-toggle="tab">Statistiques</a>
           </li>
       </ul>
-
-      <!--div class="tab-content">
-          <div class="tab-pane active" id="accueil">
-               <p>pag1</p>
-           </div>
-          <div class="tab-pane " id="catalogue">
-              <p>pag2</p>
-          </div>
-          <div class="tab-pane " id="publier">
-              <p>pag3</p>
-          </div>
-      </div-->
   </div>
 
   <div ng-view></div>
-  <!--div>(c) Paul-Antoine Levasseur v<span app-version></span></div-->
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>

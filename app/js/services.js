@@ -3,7 +3,10 @@
 /* Services */
 
 angular.module('myApp.services',[]).
-    factory('CollectionsPieces', function(){
+    factory('configuration', function () {
+        return new Config().load('dev');
+    }).
+    factory('collectionsPieces', function(){
         var collectionsList = new CollectionPiecesManager();
         collectionsList.createSelection("collection A"); // num 0
         collectionsList.createSelection("collection B"); // num 1

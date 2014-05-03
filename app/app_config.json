@@ -1,0 +1,19 @@
+{
+    "configurations": {
+
+    },
+    "server_configurations" : {
+        "test": {
+            "catFilesRepoService": "http://78.193.5.74:8001",
+            "catPhotosDirectory": "../../Ressources/PhotosLaBouille/"
+        },
+        "dev": {
+            "catFilesRepoService": "http://78.193.5.74:8001",
+            "catPhotosDirectory": "../../../../photo/Catalogue des ceramiques/"
+        },
+        "ds211": {
+            "catFilesRepoService": "http://78.193.5.74:8001",
+            "catPhotosDirectory": "../../../../photo/Catalogue des ceramiques/"
+        }
+    }
+}

@@ -26,7 +26,7 @@
                         <input type="checkbox" ng-model="chkNumPiece" ng-init="chkNumPiece=true"> Numéros pièces
                     </label>
                 </div>
-                <div class="checkbox">
+                <div class="checkbox" style="display:none">
                     <label>
                         <input type="checkbox" ng-model="chkRefPhotos"  ng-init="chkRefPhotos=true"> Références photos
                     </label>
@@ -39,7 +39,8 @@
             </div>
         </div>
 
-        <div style="padding-top: 1em;">
+        <!-- TODO: add Collections -->
+        <div style="padding-top: 1em; display: none;">
             <h4>Collections</h4>
             <div style="padding-left: 1em;">
 
@@ -79,7 +80,6 @@
                     </div>
                 </fieldset-->
 
-                <!-- TODO: add Collections -->
                 <!-- for drop down, try http://plnkr.co/edit/cs4FLN?p=preview -->
                 <!--select ng-controller="selectionsCtrl" class="form-control btn-block">
                     <option>Collections désactivées</option>
@@ -110,17 +110,19 @@
             <tbody>
             <tr ng-repeat="ceramique in ceramiques|filter:{refPiece:txtFilter}">
                 <td ng-if="chkNumPiece" width='1%'>
-                    <div class="checkbox">
+                    <!-- TODO: add checkbox selection for each piece number -->
+                    <!--div class="checkbox">
                         <label><input type="checkbox" ng-model="ceramique.collection" ng-change="selectionChanged(ceramique.refPiece)">{{ceramique.refPiece}}</label>
-                    </div>
+                    </div-->
+                    {{ceramique.refPiece}}
                 </td>
                 <td ng-if="chkRefPhotos"><ul>
                     <li ng-repeat="photo in ceramique.listPhotos">
-                        <!-- TODO: add checkbox for each photo
+                        <!-- TODO: add checkbox selection for each photo -->
                         <!--div class="checkbox">
                             <label><input type="checkbox">{{photo.nomFichier}}<span ng-if="chkIconPhotos"> [icon-picture]</span></label>
                         </div-->
-                        <label>{{photo.nomFichier}}<span ng-if="chkIconPhotos"> [icon-picture]</span></label>
+                        <label>{{photo.nomFichier}}<span ng-if="chkIconPhotos"> <img style="width:50px" src="http://78.193.5.74:8001/repo?img={{photo.nomFichier}}" /></span></label>
                     </li>
                 </ul></td>
             </tr>

@@ -1,4 +1,9 @@
-// CollectionPieces class
+'use strict';
+
+// SelectionPieces class
+// todo: rename CollectionPieces => SelectionPieces
+// todo: rename CollectionPiecesManager => SelectionPiecesManager
+
 function CollectionPieces(name)
 {
     this.name = name;
