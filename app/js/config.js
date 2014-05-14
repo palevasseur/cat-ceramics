@@ -2,21 +2,16 @@
 
 // todo: use app_config.json file instead of:
 var configFile = {
+    "current":"ds211",
     "configurations": {
 
     },
     "server_configurations" : {
-        "test": {
-            "catFilesRepoService": "http://78.193.5.74:8001",
-            "catPhotosDirectory": "../../Ressources/PhotosLaBouille/"
-        },
-        "dev": {
-            "catFilesRepoService": "http://78.193.5.74:8001",
-            "catPhotosDirectory": "../../../../photo/Catalogue des ceramiques/"
+        "pc": {
+            "catFilesRepoService": "http://localhost:8001"
         },
         "ds211": {
-            "catFilesRepoService": "http://78.193.5.74:8001",
-            "catPhotosDirectory": "../../../../photo/Catalogue des ceramiques/"
+            "catFilesRepoService": "http://78.193.5.74:8001"
         }
     }
 }
@@ -25,10 +20,8 @@ var configFile = {
 var Config = (function () {
     function Config() {
     }
-    Config.prototype.load = function (environment) {
-        if (environment != 'dev' && environment != 'test') {
-            throw new Error('You need to specify a valid environment to the kernel: dev or test');
-        }
+    Config.prototype.load = function () {
+        var environment = configFile.current;
 
         var config = {};
         //var configFile = require('../app_config.json');

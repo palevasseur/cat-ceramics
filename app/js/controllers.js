@@ -29,9 +29,11 @@ angular.module('myApp.controllers', [])
    {
        // TODO: catalogueCtrl called twice !
        var CatResp = $http.get(configuration.catFilesRepoService+"/list");
+       $scope.listPromise = CatResp;
        CatResp.success(function (data, status, headers, config) {
            //console.log("CatResp list = " + data);
            $scope.ceramiques = data;
+           $scope.ceramiques.photoPath = configuration.catFilesRepoService;
 
            // set selections TODO:optimize
            var currentSelection = collectionsPieces.getCurrentSelection();

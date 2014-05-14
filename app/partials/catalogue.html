@@ -1,6 +1,6 @@
-<div class="row-fluid tab-pane active" id="catalogue">
+<div class="row tab-pane active" id="catalogue">
 
-    <div class="span4 well">
+    <div class="col-md-4 well">
 
         <!--div class="input-group">
             <input type="text" class="input-block-level" placeholder="Rechercher (Numero de piece)">
@@ -16,7 +16,7 @@
             </div>
         </fieldset-->
 
-        <input type="text" class="input-block-level" placeholder="Rechercher (Numero de piece)" ng-model="txtFilter">
+        <input type="text" class="form-control" placeholder="Rechercher (Numero de piece)" ng-model="txtFilter">
 
         <div style="padding-top: 1em">
             <h4>Affichage</h4>
@@ -98,7 +98,7 @@
 
     </div>
 
-    <div class="span8">
+    <div cg-busy="{promise:listPromise,message:'Chargement de la liste...',backdrop:false}" class="col-md-8">
         <table ng-controller="catalogueCtrl" class="table table-bordered table-striped">
             <!--caption>caption</caption-->
             <thead>
@@ -116,15 +116,27 @@
                     </div-->
                     {{ceramique.refPiece}}
                 </td>
-                <td ng-if="chkRefPhotos"><ul>
-                    <li ng-repeat="photo in ceramique.listPhotos">
+                <td ng-if="!chkIconPhotos">
+                    <span ng-repeat="photo in ceramique.listPhotos">
                         <!-- TODO: add checkbox selection for each photo -->
                         <!--div class="checkbox">
                             <label><input type="checkbox">{{photo.nomFichier}}<span ng-if="chkIconPhotos"> [icon-picture]</span></label>
                         </div-->
-                        <label>{{photo.nomFichier}}<span ng-if="chkIconPhotos"> <img style="width:50px" src="http://78.193.5.74:8001/repo?img={{photo.nomFichier}}" /></span></label>
-                    </li>
-                </ul></td>
+                        {{photo.nomFichier}}<br/>
+                    </span>
+                </td>
+                <td ng-if="chkIconPhotos">
+                    <div class="pull-left" ng-repeat="photo in ceramique.listPhotos">
+                        <p class="muted"><img src="{{ceramiques.photoPath}}/repo?img={{photo.nomFichier}}" title="{{photo.nomFichier}}"/></p>
+                        <div class="dropdown clearfix">
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" styleOFF="display: block; position: static; margin-bottom: 5px; *width: 180px;">
+                                <li><a tabindex="-1" href="#">{{photo.nomFichier}}</a></li>
+                                <li class="divider"></li>
+                                <li><a tabindex="-1" href="#">Download</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
             </tr>
             </tbody>
         </table>

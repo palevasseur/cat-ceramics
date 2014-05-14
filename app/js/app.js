@@ -6,7 +6,8 @@ angular.module('myApp', [
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
-  'myApp.controllers'
+  'myApp.controllers',
+  'cgBusy'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/info', {templateUrl: 'partials/info.html', controller: 'accueilCtrl'});
