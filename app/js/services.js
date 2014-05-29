@@ -4,7 +4,7 @@
 
 angular.module('myApp.services',[]).
     factory('configuration', function () {
-        return new Config().load();
+        return new Config();
     }).
     factory('collectionsPieces', function(){
         var collectionsList = new CollectionPiecesManager();

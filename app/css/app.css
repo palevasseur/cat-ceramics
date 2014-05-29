@@ -1,5 +1,36 @@
 /* app css stylesheet */
 
+
+.ToolContainer {
+    position:relative;
+    top:50px;
+}
+
+@media (min-width: 992px) {
+    .ToolContainer {
+        position:fixed;
+        left: 0;
+        top:50px;
+    }
+}
+
+.ListContainer {
+    position:relative;
+    top:50px;
+}
+
+@media (min-width: 992px) {
+    .ListContainer {
+        position:relative;
+        top:50px;
+    }
+}
+
+.InfoContainer {
+    position:relative;
+    top:50px;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;

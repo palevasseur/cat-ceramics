@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>http://jsfiddle.net/7pJS8/</title>
+
+    <style>body {
+        padding: 0;
+    }
+    .wrapper {
+        margin:0 auto;
+        width: 1000px;
+    }
+    .static {
+        width:1000px;
+        z-index:2;
+        height:100px;
+        position: fixed;
+    }
+    .header {
+        background-color:Silver;
+        height:100px;
+    }
+    .content {
+        background-color:Orange;
+        width:800px;
+        height:500px;
+        float: left;
+        position:relative;
+        top: 100px;
+    }
+    .menu {
+        background-color:Green;
+        position: relative;
+        left: 800px;
+        width:200px;
+    }</style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="static">
+        <!--div class="header">
+            Header
+        </div-->
+        <div class="menu">
+            Menu
+        </div>
+    </div>
+    <div class="content">
+        Content
+    </div>
+</div>
+</body>
+</html>

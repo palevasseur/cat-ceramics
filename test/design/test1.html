@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Catalogue des céramiques</title>
+
+    <style>
+        .ListContainer {
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        .BodyHeight {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="BodyHeight">
+<ul class="nav nav-tabs">
+    <li class="active">
+        <a href="#catalogue" data-toggle="tab">Catalogue</a>
+    </li>
+    <li>
+        <a href="#info" data-toggle="tab">Statistiques</a>
+    </li>
+</ul>
+
+
+<div style="height:100%;">
+
+<div>
+
+    <input type="text" class="form-control" placeholder="Rechercher (Numero de piece)" ng-model="txtFilter">
+
+    <div style="padding-top: 1em">
+        <h4>Affichage</h4>
+
+        <div style="padding-left: 1em;">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="chkNumPiece" ng-init="chkNumPiece=true"> Numéros pièces
+                </label>
+            </div>
+            <div class="checkbox" style="display:none">
+                <label>
+                    <input type="checkbox" ng-model="chkRefPhotos" ng-init="chkRefPhotos=true"> Références photos
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="chkIconPhotos" ng-init="chkIconPhotos=false"> Icones photos
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="ListContainer">
+<table>
+<thead>
+<tr>
+    <th ng-if="chkNumPiece">Pièce</th>
+    <th ng-if="chkRefPhotos">Photos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+<tr>
+    <td width='1%'>
+        {{ceramique.refPiece}}
+    </td>
+    <td>
+                        <span>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                            {{photo.nomFichier}}<br/>
+                        </span>
+    </td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+
+</div>
+
+</body>
+</html>

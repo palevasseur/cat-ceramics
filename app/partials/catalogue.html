@@ -1,6 +1,10 @@
+
+<!-- todo: definition app.css in index.html not working, need to redef here !-->
+<link rel="stylesheet" href="css/app.css"/>
+
 <div class="row tab-pane active" id="catalogue">
 
-    <div class="col-md-4 well">
+    <div class="col-md-4 well ToolContainer">
 
         <!--div class="input-group">
             <input type="text" class="input-block-level" placeholder="Rechercher (Numero de piece)">
@@ -16,7 +20,7 @@
             </div>
         </fieldset-->
 
-        <input type="text" class="form-control" placeholder="Rechercher (Numero de piece)" ng-model="txtFilter">
+        <input type="text" class="form-control" placeholder="Rechercher (Numero de piece)" ng-model="txtFilter" ng-keypress="UnveilImg()" />
 
         <div style="padding-top: 1em">
             <h4>Affichage</h4>
@@ -33,7 +37,7 @@
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" ng-model="chkIconPhotos" ng-init="chkIconPhotos=false"> Icones photos
+                        <input type="checkbox" ng-model="chkIconPhotos" ng-init="chkIconPhotos=false" ng-click="UnveilImg()"> Photos
                     </label>
                 </div>
             </div>
@@ -98,9 +102,10 @@
 
     </div>
 
-    <div cg-busy="{promise:listPromise,message:'Chargement de la liste...',backdrop:false}" class="col-md-8">
+    <!-- TODO: img tooltip, add popover http://getbootstrap.com/javascript/#popovers -->
+    <!-- TODO: add scroll bar: http://stackoverflow.com/questions/21168521/scrollable-table-with-fixed-header-in-bootstrap -->
+    <div class="col-md-offset-4 col-md-8 ListContainer" cg-busy="{promise:listPromise,message:'Chargement',templateUrl:'partials/waiting.html'}">
         <table ng-controller="catalogueCtrl" class="table table-bordered table-striped">
-            <!--caption>caption</caption-->
             <thead>
             <tr>
                 <th ng-if="chkNumPiece">Pièce</th>
@@ -108,9 +113,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="ceramique in ceramiques|filter:{refPiece:txtFilter}">
+            <tr ng-repeat="ceramique in ceramiques|filter:{refPiece:txtFilter}" OFFmy-repeat-directive>
                 <td ng-if="chkNumPiece" width='1%'>
-                    <!-- TODO: add checkbox selection for each piece number -->
                     <!--div class="checkbox">
                         <label><input type="checkbox" ng-model="ceramique.collection" ng-change="selectionChanged(ceramique.refPiece)">{{ceramique.refPiece}}</label>
                     </div-->
@@ -118,16 +122,15 @@
                 </td>
                 <td ng-if="!chkIconPhotos">
                     <span ng-repeat="photo in ceramique.listPhotos">
-                        <!-- TODO: add checkbox selection for each photo -->
-                        <!--div class="checkbox">
-                            <label><input type="checkbox">{{photo.nomFichier}}<span ng-if="chkIconPhotos"> [icon-picture]</span></label>
-                        </div-->
                         {{photo.nomFichier}}<br/>
                     </span>
                 </td>
                 <td ng-if="chkIconPhotos">
                     <div class="pull-left" ng-repeat="photo in ceramique.listPhotos">
-                        <p class="muted"><img src="{{ceramiques.photoPath}}/repo?img={{photo.nomFichier}}" title="{{photo.nomFichier}}"/></p>
+                        <p class="muted">
+                            <!--img src="{{ceramiques.photoPath}}/repo?img={{photo.nomFichier}}" title="{{photo.nomFichier}}"/-->
+                            <img src="img/loading.jpg" data-src="{{ceramiques.photoPath}}/repo?img={{photo.nomFichier}}" title="{{photo.nomFichier}}"/>
+                        </p>
                         <div class="dropdown clearfix">
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" styleOFF="display: block; position: static; margin-bottom: 5px; *width: 180px;">
                                 <li><a tabindex="-1" href="#">{{photo.nomFichier}}</a></li>

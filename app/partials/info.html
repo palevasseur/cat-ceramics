@@ -1,5 +1,7 @@
-<div class="row-fluid">
-<div class="span12 well">
+<!-- todo: definition app.css in index.html not working, need to redef here !-->
+<link rel="stylesheet" href="css/app.css"/>
+
+<div class="well InfoContainer">
 <table ng-controller="accueilCtrl">
 <tr>
 	<td>Nombre de pièces : </td><td>{{stat.NbrPieces}}</td>
@@ -11,5 +13,4 @@
         <td>Nombre de photos sans numéro de pieces : </td><td>{{stat.NbrPhotosWihoutNum}}</td>
     </tr>
 </table>
-</div>
 </div>

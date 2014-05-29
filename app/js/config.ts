@@ -1,6 +1,8 @@
 /// <reference path="../../typings/node/node.d.ts" />
 //var fs = require('fs');
-var appConfig = {
+
+var appConfig =
+{
     "current": "ds211",
     "pc": {
         "catFilesRepoService": "http://localhost:8001"
@@ -8,18 +10,17 @@ var appConfig = {
     "ds211": {
         "catFilesRepoService": "http://78.193.5.74:8001"
     }
-};
+}
 
-var Config = (function () {
-    function Config() {
+class Config {
+    constructor() {
         //var appConfig = require('../config.json');
-        var currentConfig = appConfig[appConfig["current"]];
+        var currentConfig = appConfig[appConfig["current"]]
         for (var name in currentConfig) {
             this[name] = currentConfig[name];
         }
     }
-    return Config;
-})();
 
-module.exports = Config;
-//# sourceMappingURL=config.js.map
+}
+
+export = Config;

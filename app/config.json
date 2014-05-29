@@ -1,0 +1,9 @@
+{
+    "current": "pc",
+    "pc": {
+        "catFilesRepoService": "http://localhost:8001"
+    },
+    "ds211": {
+        "catFilesRepoService": "http://78.193.5.74:8001"
+    }
+}

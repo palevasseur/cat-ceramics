@@ -44,7 +44,7 @@ angular.module('myApp.controllers', [])
            )
        });
        CatResp.error(function (data, status, headers, config) {
-           console.log("ERROR data = " + data);
+           console.log("ERROR config=" + config.url + ", data = " + data);
            //$scope.data = data;
        });
 
@@ -52,6 +52,13 @@ angular.module('myApp.controllers', [])
            console.log("selectionChanged = " + item);
            var currentSelection = collectionsPieces.getCurrentSelection();
            currentSelection.select(item); // TODO: check if checkbox selected
+       }
+
+       $scope.UnveilImg = function () {
+           // todo : remove timeout workaround
+           window.setTimeout(function () {
+               $("img").unveil(200);
+           }, 3000);
        }
     })
 
