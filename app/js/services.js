@@ -1,8 +1,6 @@
 'use strict';
 
-/* Services */
-
-angular.module('myApp.services',[]).
+angular.module('catCeram.services',[]).
     factory('configuration', function () {
         return new Config();
     }).

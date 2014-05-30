@@ -1,27 +1,14 @@
 'use strict';
 
-/* Controllers */
-
-/*var config = new Object();
-config.photosRepositoryUrl = 'http://78.193.5.74:8001';
-config.photosDirectory = '../../../../photo/Catalogue des ceramiques/';
-var CeramWebServiceUrl = config.photosRepositoryUrl;*/
-
-//var CeramWebServiceUrl = "http://78.193.5.74:8001";
-//var CeramWebServiceUrl = "http://192.168.1.14:8001";
-//var CeramWebServiceUrl = "http://localhost:8001";
-
-angular.module('myApp.controllers', [])
+angular.module('catCeram.controllers', [])
     .controller('accueilCtrl', function($scope, $http, configuration)
     {
         var CatResp = $http.get(configuration.catFilesRepoService+"/stat");
         CatResp.success(function (data, status, headers, config) {
-            //console.log("CatResp = " + data);
             $scope.stat = data;
         });
         CatResp.error(function (data, status, headers, config) {
             console.log("ERROR data = " + JSON.stringify(data));
-            //$scope.data = data;
         });
     })
 
@@ -31,21 +18,18 @@ angular.module('myApp.controllers', [])
        var CatResp = $http.get(configuration.catFilesRepoService+"/list");
        $scope.listPromise = CatResp;
        CatResp.success(function (data, status, headers, config) {
-           //console.log("CatResp list = " + data);
            $scope.ceramiques = data;
            $scope.ceramiques.photoPath = configuration.catFilesRepoService;
 
            // set selections TODO:optimize
            var currentSelection = collectionsPieces.getCurrentSelection();
            angular.forEach($scope.ceramiques, function(ceramique) {
-                   //console.log("ceramique.refPiece = " + ceramique.refPiece);
                    ceramique.collection = currentSelection.IsSelected(ceramique.refPiece);
                }
            )
        });
        CatResp.error(function (data, status, headers, config) {
            console.log("ERROR config=" + config.url + ", data = " + data);
-           //$scope.data = data;
        });
 
        $scope.selectionChanged = function(item) {

@@ -1,9 +1,6 @@
 'use strict';
 
-/* Directives */
-
-
-angular.module('myApp.directives', [])
+angular.module('catCeram.directives', [])
     .directive('myRepeatDirective', function() {
         return function(scope, element, attrs) {
             //angular.element(element).css('color','blue');
