@@ -1,7 +1,15 @@
+install
+- git clone https://github.com/palevasseur/cat-ceramics.git
+- cd cat-ceramics
+- npm install
+- bower install
+- tsd reinstall
+
+----------------
 CatCeramiques project base on https://github.com/angular/angular-seed
 launch CatCeramiques (CatCeramiquesNodeService.js must be launch before)
 1/ cmd admin
-2/ [node scripts/web-server.js]
+2/ [node server.js]
 
 launch app : http://192.168.1.14:8000/app/index.html
 
@@ -17,3 +25,8 @@ In CatCeramiques folder (where Gruntfile.js is defined with protractor default t
 [grunt]
 Or with the watch
 [grunt watch]
+
+=============
+on ds211:
+// ceramiques files: /volume1/photo/Catalogue des ceramiques
+// node src: /volume1/homes/admin/NodeProjects
