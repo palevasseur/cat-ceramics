@@ -27,6 +27,13 @@ Or with the watch
 [grunt watch]
 
 =============
-on ds211:
+deploy on ds211:
 // ceramiques files: /volume1/photo/Catalogue des ceramiques
 // node src: /volume1/homes/admin/NodeProjects
+
+in /volume1/homes/admin/NodeProjects/cat-ceramics :
+copy app
+copy package.json
+copy server.js
+npm install --production
+change config_app.js : current=ds211
