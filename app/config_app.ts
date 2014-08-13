@@ -1,3 +1,4 @@
+/// <reference path="../typings/node/node.d.ts" />
 
 class Config {
     private appConfig =

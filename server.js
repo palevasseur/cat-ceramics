@@ -31,10 +31,4 @@ app.get('*', function (req, res) {
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });
-/*
-http.createServer(function (req, res) {
-res.writeHead(200, {'Content-Type': 'html'});
-res.end(fs.readFileSync('app/index.html'));
-}).listen(8000);
-*/
 //# sourceMappingURL=server.js.map

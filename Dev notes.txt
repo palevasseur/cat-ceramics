@@ -37,3 +37,8 @@ copy package.json
 copy server.js
 npm install --production
 change config_app.js : current=ds211
+
+==============
+angular - typescript
+http://blog.xebia.fr/2014/03/12/angular-et-typescript-un-mariage-heureux/
+

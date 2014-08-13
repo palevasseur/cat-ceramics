@@ -10,6 +10,12 @@
     },
     "express/express.d.ts": {
       "commit": "5b24e50a9a3076a596fc497ee6504a970e853e0f"
+    },
+    "angularjs/angular.d.ts": {
+      "commit": "5609ffee7b5d93255f6b3a0fdf70769c5a21d314"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "5609ffee7b5d93255f6b3a0fdf70769c5a21d314"
     }
   }
 }
