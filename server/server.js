@@ -1,18 +1,20 @@
-/// <reference path="typings/tsd.d.ts" />
+/// <reference path="../typings/tsd.d.ts" />
 var http = require('http');
 var express = require('express');
 var engines = require('consolidate');
 var methodOverride = require('method-override');
 var path = require('path');
 var bodyParser = require('body-parser');
+var BasicAuth = require('./BasicAuth');
 
 var app = express();
+app.use(BasicAuth.authenticator);
 app.set('port', process.env.PORT || 8000);
-app.set('views', __dirname + '/app');
+app.set('views', __dirname + '/../app');
 app.engine('html', engines.ect);
 app.use(bodyParser());
 app.use(methodOverride());
-app.use(express.static(path.join(__dirname, 'app')));
+app.use(express.static(path.join(__dirname, '../app')));
 
 app.get('/', function (req, res) {
     res.render('index.html');

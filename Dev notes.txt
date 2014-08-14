@@ -1,3 +1,8 @@
+TODO list:
+- bower_components: to put on the root folder 'cat-ceramics'
+- filtering by piece number: exact match number, and add more options...
+
+---------------
 install
 - git clone https://github.com/palevasseur/cat-ceramics.git
 - cd cat-ceramics
