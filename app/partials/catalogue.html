@@ -1,8 +1,26 @@
 
-<div class="row tab-pane active" id="catalogue">
+<div class="row tab-pane active" id="catalogue" ng-controller="catalogueCtrl">
 
     <div class="col-md-4 well ToolContainer">
-        <input type="text" class="form-control" placeholder="Rechercher (Numero de piece)" ng-model="txtFilter" ng-change="chkIconPhotos=false" />
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Rechercher"
+                           ng-model="filterService.searchTxt" ng-change="chkIconPhotos=false;catalogueOptionsChanged()" />
+                    <div class="input-group-addon" ng-click="filterService.searchTxt='';catalogueOptionsChanged()">X</div>
+                </div>
+            </div>
+        </form>
+
+        <div style="padding-left: 1em;">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="filterService.options.searchInOption.photoName"
+                           ng-change="catalogueOptionsChanged()"> Recherche par nom de photos
+                </label>
+            </div>
+
+        </div>
 
         <div style="padding-top: 1em">
             <h4>Affichage</h4>
@@ -19,6 +37,17 @@
                 </div>
             </div>
         </div>
+
+        <!-- DEBUG -->
+        <!--div>
+            <br>filter={{filterService.activeFilters.refPiece}}
+            <br>numPiece={{catalogueOptions.searchInOption.numPiece}}
+            <br>photoName={{catalogueOptions.searchInOption.photoName}}
+            <br>chkNumPiece={{chkNumPiece}}
+            <br>chkIconPhotos={{chkIconPhotos}}
+            <br>searchText={{searchTxt}}
+        </div-->
+        <!-- DEBUG -->
 
         <!-- TODO: add Collections -->
         <div style="padding-top: 1em; display: none;">
@@ -80,7 +109,7 @@
     </div>
 
     <div class="col-md-offset-4 col-md-8 ListContainer" cg-busy="{promise:listPromise,message:'Chargement',templateUrl:'partials/waiting.html'}">
-        <table ng-controller="catalogueCtrl" class="table table-bordered table-striped">
+        <table OFFng-controller="catalogueCtrl" class="table table-bordered table-striped">
             <thead>
             <tr>
                 <th ng-if="chkNumPiece">Pièce</th>
@@ -88,7 +117,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="ceramique in ceramiques|filter:{refPiece:txtFilter}">
+            <tr ng-repeat="ceramique in ceramiques|filter:filterService.activeFilters">
                 <td ng-if="chkNumPiece" width='1%'>
                     <!--div class="checkbox">
                         <label><input type="checkbox" ng-model="ceramique.collection" ng-change="selectionChanged(ceramique.refPiece)">{{ceramique.refPiece}}</label>
