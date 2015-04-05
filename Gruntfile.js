@@ -37,7 +37,7 @@ module.exports = function(grunt) {
                 fast: 'always'
             },
             dev: {
-                src: ['app/**/*.ts', 'server.ts']
+                src: ['app/**/*.ts', 'server/**/*.ts']
             }
         }
     })
