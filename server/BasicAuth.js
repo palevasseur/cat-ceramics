@@ -4,8 +4,7 @@ var BasicAuth;
 (function (BasicAuth) {
     var loginUser = 'ceramiques';
     var loginPassword = 'catalogueJJL';
-    var realMName = 'Authentification';
-
+    var realMName = 'Authentification'; // auth message prompt to the user (if empty, no auth prompt)
     function authenticator(req, res, next) {
         var auth;
 
@@ -33,7 +32,8 @@ var BasicAuth;
 
             // this will displayed in the browser when authorization is cancelled
             res.end('Unauthorized');
-        } else {
+        }
+        else {
             // continue with processing, user was authenticated
             next();
         }

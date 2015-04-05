@@ -17,11 +17,11 @@ CollectionPieces.prototype.unselect = function (pieceNumber) {
 CollectionPieces.prototype.IsSelected = function (pieceNumber) {
     if (this.selections.indexOf(pieceNumber) != -1) {
         return true;
-    } else {
+    }
+    else {
         return false;
     }
 };
-
 // CollectionPiecesManager class
 function CollectionPiecesManager() {
     this.selections = new Array();

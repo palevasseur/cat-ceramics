@@ -1,5 +1,6 @@
 /// <reference path="../../typings/angularjs/angular.d.ts" />
-angular.module('catCeram.controllers', ['catCeram.services']).controller('accueilCtrl', function ($scope, $http, configuration) {
+angular.module('catCeram.controllers', ['catCeram.services'])
+    .controller('accueilCtrl', function ($scope, $http, configuration) {
     var CatResp = $http.get(configuration.catFilesRepoService + "/stat");
     CatResp.success(function (data, status, headers, config) {
         $scope.stat = data;
@@ -7,7 +8,8 @@ angular.module('catCeram.controllers', ['catCeram.services']).controller('accuei
     CatResp.error(function (data, status, headers, config) {
         console.log("ERROR data = " + JSON.stringify(data));
     });
-}).controller('catalogueCtrl', function ($scope, $http, configuration, collectionsPieces, filterService) {
+})
+    .controller('catalogueCtrl', function ($scope, $http, configuration, collectionsPieces, filterService) {
     // TODO: catalogueCtrl called twice !
     var CatResp = $http.get(configuration.catFilesRepoService + "/list");
     $scope.listPromise = CatResp;
@@ -39,7 +41,8 @@ angular.module('catCeram.controllers', ['catCeram.services']).controller('accuei
                 refPiece: '',
                 listPhotos: $scope.filterService.searchTxt
             };
-        } else {
+        }
+        else {
             $scope.filterService.activeFilters = {
                 refPiece: $scope.filterService.searchTxt,
                 listPhotos: ''
@@ -53,7 +56,8 @@ angular.module('catCeram.controllers', ['catCeram.services']).controller('accuei
             $("img")['unveil'](200); // better $("img").unveil(200); but ts error = undefined jquery method
         }, 3000);
     };
-}).controller('selectionsCtrl', function ($scope, collectionsPieces) {
+})
+    .controller('selectionsCtrl', function ($scope, collectionsPieces) {
     $scope.selections = collectionsPieces.selections;
 });
 //# sourceMappingURL=controllers.js.map
