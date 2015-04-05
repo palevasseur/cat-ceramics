@@ -3,7 +3,7 @@
 class Config {
     private appConfig =
     {
-        "current": "ds211",
+        "current": "pc",
         "pc": {
             "catFilesRepoService": "http://localhost:8001"
         },
