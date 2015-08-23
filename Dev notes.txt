@@ -17,6 +17,7 @@ launch CatCeramiques (CatCeramiquesNodeService.js must be launch before)
 2/ [node server.js]
 
 launch app : http://192.168.1.14:8000/app/index.html
+auth : ceramiques / catalogueJJL
 
 ----------------
 launch protractor

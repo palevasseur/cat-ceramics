@@ -132,7 +132,9 @@
                 <td ng-if="chkIconPhotos">
                     <div class="pull-left" ng-repeat="photo in ceramique.listPhotos">
                         <p class="muted">
-                            <img src="img/loading.jpg" data-src="{{ceramiques.photoPath}}/repo?img={{photo.nomFichier}}" title="{{photo.nomFichier}}"/>
+                            <img src="{{ceramiques.photoPath}}/repo?img={{photo.nomFichier}}" title="{{photo.nomFichier}}"/>
+                            <!-- unveil no more working, angular tags no more replaced in data-src ! -->
+                            <!--img src="img/loading.jpg" data-src="{{ceramiques.photoPath}}/repo?img={{photo.nomFichier}}" title="{{photo.nomFichier}}"/-->
                         </p>
                     </div>
                 </td>

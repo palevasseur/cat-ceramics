@@ -3,12 +3,12 @@
 class Config {
     private appConfig =
     {
-        "current": "pc",
+        "current": "ds415",
         "pc": {
             "catFilesRepoService": "http://localhost:8001"
         },
-        "ds211": {
-            "catFilesRepoService": "http://78.193.5.74:8001"
+        "ds415": {
+            "catFilesRepoService": "http://83.156.229.30:8001"
         }
     }
 
