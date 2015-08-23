@@ -33,7 +33,7 @@ Or with the watch
 [grunt watch]
 
 =============
-deploy on ds211:
+deploy on ds415:
 // ceramiques files: /volume1/photo/Catalogue des ceramiques
 // node src: /volume1/homes/admin/NodeProjects
 
@@ -42,7 +42,8 @@ copy app
 copy package.json
 copy server.js
 npm install --production
-change config_app.js : current=ds211
+change config_app.js : current=ds415
+in cat-ceramics folder, launch [node server/server.js]
 
 ==============
 angular - typescript
