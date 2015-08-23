@@ -53,12 +53,6 @@ angular.module('catCeram.controllers', ['catCeram.services'])
             }
         }
 
-        $scope.UnveilImg = function () {
-            // todo : remove timeout workaround
-            window.setTimeout(function () {
-                $("img")['unveil'](200); // better $("img").unveil(200); but ts error = undefined jquery method
-            }, 3000);
-        }
     })
 
     .controller('selectionsCtrl', function ($scope, collectionsPieces) {

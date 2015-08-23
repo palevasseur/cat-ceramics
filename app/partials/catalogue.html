@@ -32,7 +32,7 @@
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" ng-model="chkIconPhotos" ng-init="chkIconPhotos=false" ng-click="UnveilImg()"> Photos
+                        <input type="checkbox" ng-model="chkIconPhotos" ng-init="chkIconPhotos=false"> Photos
                     </label>
                 </div>
             </div>
@@ -133,8 +133,6 @@
                     <div class="pull-left" ng-repeat="photo in ceramique.listPhotos">
                         <p class="muted">
                             <img src="{{ceramiques.photoPath}}/repo?img={{photo.nomFichier}}" title="{{photo.nomFichier}}"/>
-                            <!-- unveil no more working, angular tags no more replaced in data-src ! -->
-                            <!--img src="img/loading.jpg" data-src="{{ceramiques.photoPath}}/repo?img={{photo.nomFichier}}" title="{{photo.nomFichier}}"/-->
                         </p>
                     </div>
                 </td>

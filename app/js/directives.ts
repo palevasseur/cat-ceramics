@@ -5,7 +5,6 @@ angular.module('catCeram.directives', [])
         return function(scope, element, attrs) {
             //angular.element(element).css('color','blue');
             if (scope.$last) {
-                //UnveilImg();
                 angular.element(element).css('color', 'red');
             }
         };
